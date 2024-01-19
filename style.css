@@ -6,7 +6,7 @@ body {
 	color: #ff01dd;
 	text-align: center;	
 }
-p { color: #ffffff;  }
+p { color: #e802c2;  }
 
 /*-=-=-=-=-=-=-=-=-=-*/
 /* Column Grids */
@@ -38,7 +38,7 @@ p { color: #ffffff;  }
 /* Flip Panel */
 /*-=-=-=-=-=-=-=-=-=-=- */
 
-.wrapper{ width: 980px; margin: 0 auto;  background-color: #bdd3de; hoverflow: hidden;}
+.wrapper{ width: 980px; margin: 0 auto;  background-color: #d509f3; hoverflow: hidden;}
 
 .panel {
 	margin: 0 auto;
