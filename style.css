@@ -52,6 +52,16 @@ p { color: #83026e;  }
 .panel .back {
 	text-align: center;
 }
+
+a {
+	color: #f800ff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+	transform: scale(1.5);
+}
 	
 .panel .front {
 	height: inherit;
@@ -99,8 +109,11 @@ p { color: #83026e;  }
 	-webkit-transform: rotateX(0deg) rotateY(0deg);
 	-moz-transform: rotateX(0deg) rotateY(0deg);
 }
-.box1{
-	background-color: #14bcc8;
+
+.box11{
+	background-image: url('assets/clavier-mecanique.avif');
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 250px;
 	height: 150px;
 	margin: 0 auto;
@@ -109,8 +122,35 @@ p { color: #83026e;  }
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
-.box2{
-	background-color: #ff7e70;
+
+.box12{
+	background-image: url('assets/mouse.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 250px;
+	height: 150px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.box13{
+	background-image: url('assets/ecran sale.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 250px;
+	height: 150px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.box21{
+	background-color: #000000;
 	width: 250px;
 	height: 150px;
 	margin: 0 auto;
@@ -121,10 +161,21 @@ p { color: #83026e;  }
 }
 
 .box22{
-	background-color: #000000;
+	background-color: #2a6022;
 	width: 250px;
 	height: 150px;
-	margin: 0 auto;
+	margin: initial;
+	padding: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.box23{
+	background-color: #b7a216;
+	width: 250px;
+	height: 150px;
+	margin: initial;
 	padding: 20px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;

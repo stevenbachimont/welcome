@@ -1,6 +1,5 @@
-const commands = String.raw`samurai@internal-cdprojektred.com/:~ cd HAX
-samurai@internal-cdprojektred.com/HAX/:~ ls`;
-
+const commands1 = String.raw`stevenbachimont.com/:~ cd Dark Side`;
+const commands2 = String.raw`stevenbachimont.com/Dark Side/:~ ls`;
 
 
 let blink = document.querySelector('.blink');
@@ -51,30 +50,40 @@ const DrawCommands = async commands => {
 
 // Start the code
 (async()=> {
-    await DrawCommands("slect your directory:~ cd HAX");
-    await Delay(1000);
-    RenderString("type your password:");
-    await Delay(1000);
-    RenderString("\n");
-    await DrawCommands('sudo cd/HAX:~ node.js');
-    await TypeString("\n\nstevenbachimont.com\n\n");
-    await Delay(1000);
-    await DrawCommands("slect your directory:~ cd HAX");
-    await Delay(1000);
-    RenderString("type your password:");
-    await Delay(1000);
-    RenderString("\n");
-    await DrawCommands('sudo cd/HAX:~ node.js');
-    await TypeString("\n\nstevenbachimont.com\n\n");
-    await Delay(1000);
-    await DrawCommands("slect your directory:~ cd HAX");
-    await Delay(1000);
-    RenderString("type your password:");
-    await Delay(1000);
-    RenderString("\n");
-    await DrawCommands('sudo cd/HAX:~ node.js');
-    await TypeString("\n\nstevenbachimont.com\n\n");
-    await Delay(1000);
 
+    await Delay(500);
+    RenderString("\n");
+    await Delay(800);
+    RenderString("\n");
+    await Delay(500);
+    RenderString("\n");
+    await Delay(200);
+    RenderString("\n");
+    await Delay(500);
+    RenderString("\n");
+    await Delay(200);
+    RenderString("\n");
+    await Delay(500);
+    RenderString("\n");
+    await Delay(800);
+    RenderString("\n");
+    await DrawCommands("/:~ ssh stevenbachimont.com -p 8080");
+    await Delay(1000);
+    RenderString("stevenbachimont.com password:");
+    await Delay(2000);
+    RenderString("\n");
+    await Delay(200);
+    RenderString("\n");
+    await DrawCommands(commands1);
+    await Delay(500);
+    RenderString("\n");
+    await Delay(800);
+    RenderString("\n");
+    await DrawCommands(commands2);
+    await Delay(2000);
+    RenderString("\n");
+    await Delay(200);
+    RenderString("\n");
+    RenderString('Click on the Dark side');
 })();
 
