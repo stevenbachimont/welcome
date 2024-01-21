@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+
 	var hoverElements = document.querySelectorAll('.hover');
 
 	hoverElements.forEach(function (element) {
@@ -10,4 +10,4 @@ document.addEventListener('DOMContentLoaded', function () {
 			element.classList.remove('flip');
 		});
 	});
-});
+

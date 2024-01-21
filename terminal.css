@@ -56,8 +56,8 @@
 }
 
 .terminalsession:hover {
-    background-color: #2980b9;
-    transform: scale(1.4);
+    background-color: #444444;
+    transform: scaleY(1.4);
 }
 .terminal-data { display: none; }
 .terminal-window .gray { color: gray; }

@@ -1,33 +1,57 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var data = [
-    {
-      action: 'type',
-      strings: ["sudo docker built -t stevenbachimont.com .^400"],
-      output: '<span class="gray">stevenbachimont.com 0.10.2 installed</span><br>&nbsp;',
-      postDelay: 1000
-    },
-    {
-      action: 'type',
-      strings: ["cd terminal ^400"],
-      output: ' ',
-      postDelay: 2000
-    },
-    {
-      action: 'type',
-      //clear: true,
-      strings: ['sudo run terminal ^400'],
-      output: document.querySelector('.mimik-run-output').innerHTML,
-      postDelay: 3000
-    },
-    {
-      action: 'type',
-      strings: ["Let's go!", ''],
-      postDelay: 2000
-    }
-  ];
+var data = [
+  {
+    action: 'type',
+    strings: ["sudo docker build -t stevenbachimont.com"],
+    output: '<span class="gray">stevenbachimont.com 0.10.2 installed</span><br>&nbsp;',
+    postDelay: 1000
+  },
+  {
+    action: 'type',
+    strings: ["cd terminal"],
+    output: ' ',
+    postDelay: 2000
+  },
+  {
+    action: 'type',
+    strings: ['sudo run terminal'],
+    output: document.querySelector('.mimik-run-output').innerHTML,
+    postDelay: 3000
+  },
+  {
+    action: 'type',
+    strings: ["Let's go!", ''],
+    postDelay: 2000
+  }
+];
 
+
+var isHovered = false;
+
+function clearAndRunScripts() {
+
+  var history = document.querySelector('.history');
+  history.innerHTML = '';
   runScripts(data, 0);
+
+}
+
+var hoverElements = document.querySelectorAll('.box21');
+
+hoverElements.forEach(function (element) {
+  element.addEventListener('mouseenter', function () {
+    if (!isHovered) {
+      element.classList.add('flip');
+      clearAndRunScripts();
+      isHovered = true;
+    }
+  });
+
+  element.addEventListener('mouseleave', function () {
+    element.classList.remove('flip');
+    isHovered = false;
+  });
 });
+
 
 function runScripts(data, pos) {
   var prompt = document.querySelector('.prompt'),
@@ -94,4 +118,10 @@ function typeText(prompt, strings, output, postDelay, pos, data) {
   }
 
   typeCharacter();
+
+
 }
+
+
+
+
