@@ -14,7 +14,7 @@ var data = [
   {
     action: 'type',
     strings: ['sudo run terminal'],
-    output: document.querySelector('.mimik-run-output').innerHTML,
+    output: document.querySelector('.output').innerHTML,
     postDelay: 3000
   },
   {
@@ -24,15 +24,13 @@ var data = [
   }
 ];
 
-
 var isHovered = false;
+var currentScriptTimeout;
 
 function clearAndRunScripts() {
-
   var history = document.querySelector('.history');
   history.innerHTML = '';
   runScripts(data, 0);
-
 }
 
 var hoverElements = document.querySelectorAll('.box21');
@@ -49,28 +47,29 @@ hoverElements.forEach(function (element) {
   element.addEventListener('mouseleave', function () {
     element.classList.remove('flip');
     isHovered = false;
+    stopCurrentScript();
+    clearAndReset();
   });
 });
-
 
 function runScripts(data, pos) {
   var prompt = document.querySelector('.prompt'),
       script = data[pos];
 
-  if(script.clear === true) {
+  if (script.clear === true) {
     document.querySelector('.history').innerHTML = '';
   }
 
-  switch(script.action) {
+  switch (script.action) {
     case 'type':
-      // cleanup for next execution
+      // Nettoyage pour l'exécution suivante
       prompt.removeAttribute('data-typed');
       document.querySelector('.typed-cursor').textContent = '';
 
       typeText(prompt, script.strings, script.output, script.postDelay, pos, data);
       break;
     case 'view':
-      // Handle 'view' action if needed
+      // Gérer l'action 'view' si nécessaire
       break;
   }
 }
@@ -89,7 +88,7 @@ function typeText(prompt, strings, output, postDelay, pos, data) {
 
     if (index < currentText.length - 1) {
       index++;
-      setTimeout(typeCharacter, typeSpeed);
+      currentScriptTimeout = setTimeout(typeCharacter, typeSpeed);
     } else {
       index = 0;
 
@@ -103,14 +102,12 @@ function typeText(prompt, strings, output, postDelay, pos, data) {
         history.innerHTML = historyText.join('<br>');
       }
 
-      // Scroll to bottom of screen
       document.querySelector('section.terminal').scrollTop = document.querySelector('section.terminal').scrollHeight;
 
-      // Run next script
       pos++;
 
       if (pos < data.length) {
-        setTimeout(function() {
+        setTimeout(function () {
           runScripts(data, pos);
         }, postDelay || 1000);
       }
@@ -118,10 +115,22 @@ function typeText(prompt, strings, output, postDelay, pos, data) {
   }
 
   typeCharacter();
-
-
 }
 
+function stopCurrentScript() {
+  clearTimeout(currentScriptTimeout);
+}
 
+function clearAndReset() {
+  var prompt = document.querySelector('.prompt');
+  var history = document.querySelector('.history');
+  var terminalSection = document.querySelector('section.terminal');
+
+  prompt.textContent = '';
+  history.innerHTML = '';
+  terminalSection.scrollTop = 0; // Remettre la barre de défilement en haut
+
+  // Réinitialiser d'autres états ou données si nécessaire
+}
 
 

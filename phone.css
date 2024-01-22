@@ -1,6 +1,5 @@
 
 .holder {
-  animation: rezeg 2s infinite;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +11,11 @@
   background: #3C4345;
   transition: all 200ms ease-in-out;
   box-shadow: 0px 10px 50px -10px rgba(0, 0, 0, 0.6);
+}
+
+.holder:hover {
+  animation: rezeg 2s ;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.6);
 }
 
 .cam {
@@ -41,17 +45,24 @@
   background-color: #E4E4E4;
   overflow: hidden;
 }
+
 .screen .icon-cont {
   display: flex;
   justify-content: space-between;
   width: auto;
 }
+
+.icon-cont:hover {
+ transform: scale(-0.5);
+}
+
 .screen .icon {
   margin: 12px 4px;
   width: 50px;
   height: 50px;
   background: #a19a0f;
 }
+
 .screen .icon-wide {
   display: flex;
   margin: 10px 4px 5px;
@@ -59,6 +70,7 @@
   height: 40px;
   background: #199469;
 }
+
 .screen .icon-kerek {
   display: flex;
   margin: 20px auto;
@@ -67,6 +79,12 @@
   background: #e07810;
   border-radius: 50%;
 }
+
+.screen .icon-kerek:hover {
+  transform: scale(1.5);
+  color: #169a17
+}
+
 .screen .flair {
   margin-left: -270px;
   margin-top: -200px;
@@ -86,7 +104,7 @@
   margin-bottom: 7px;
 }
 
-@keyframes rezeg {
+@keyframes rezeg{
   0% {
     transform: scale(1) rotate(0deg);
   }

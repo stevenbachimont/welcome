@@ -1,10 +1,10 @@
 body {
 	background-color: black;
 	margin: 20px;
-	font-family: Arial, Tahoma; 
-	font-size: 20px; 
+	font-family: Arial, Tahoma;
+	font-size: 20px;
 	color: #ff01dd;
-	text-align: center;	
+	text-align: center;
 }
 p { color: #83026e;  }
 
@@ -42,7 +42,7 @@ p { color: #83026e;  }
 
 .panel {
 	margin: 0 auto;
-	height: 130px;  
+	height: 130px;
 	position: relative;
 	-webkit-perspective: 600px;
 	-moz-perspective: 600px;
@@ -62,7 +62,7 @@ a:hover {
 	color: red;
 	transform: scale(1.5);
 }
-	
+
 .panel .front {
 	height: inherit;
 	position: absolute;
@@ -70,16 +70,16 @@ a:hover {
 	z-index: 900;
 	text-align: center;
 	-webkit-transform: rotateX(0deg) rotateY(0deg);
-	   -moz-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
 	-webkit-transform-style: preserve-3d;
-	   -moz-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
 	-webkit-transition: all .4s ease-in-out;
-	   -moz-transition: all .4s ease-in-out;
-		-ms-transition: all .4s ease-in-out;
-		 -o-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
 }
 
 .panel .back {
@@ -88,16 +88,16 @@ a:hover {
 	top: 0;
 	z-index: 1000;
 	-webkit-transform: rotateY(-180deg);
-	   -moz-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
 	-webkit-transform-style: preserve-3d;
-	   -moz-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
 	-webkit-transition: all .4s ease-in-out;
-	   -moz-transition: all .4s ease-in-out;
-		-ms-transition: all .4s ease-in-out;
-		 -o-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
+	-ms-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
 }
 .panel.flip .front {
 	z-index: 900;
